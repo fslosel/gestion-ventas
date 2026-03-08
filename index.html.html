@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Gestión de Ventas">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#D32F2F">
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjogIkdlc3RpXHUwMGYzbiBkZSBWZW50YXMiLCAic2hvcnRfbmFtZSI6ICJHZXN0aVx1MDBmM24gVmVudGFzIiwgImRlc2NyaXB0aW9uIjogIklsbGlub2lzIFx1MjAxMyBHZXN0aVx1MDBmM24gZGUgVmVudGFzIDIwMjYiLCAic3RhcnRfdXJsIjogIi4iLCAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0IiwgImJhY2tncm91bmRfY29sb3IiOiAiIzFhMWExYSIsICJ0aGVtZV9jb2xvciI6ICIjRDMyRjJGIiwgImljb25zIjogW3sic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJeE9USWlJR2hsYVdkb2REMGlNVGt5SWo0S0lDQThjbVZqZENCM2FXUjBhRDBpTVRreUlpQm9aV2xuYUhROUlqRTVNaUlnWm1sc2JEMGlJekZoTVdFeFlTSXZQZ29nSUR4eVpXTjBJSGc5SWpFMElpQjVQU0l4TkNJZ2QybGtkR2c5SWpnd0lpQm9aV2xuYUhROUlqSTRJaUJ5ZUQwaU15SWdabWxzYkQwaUkwUXpNa1l5UmlJdlBnb2dJRHgwWlhoMElIZzlJalUwSWlCNVBTSXpOaUlnWm05dWRDMW1ZVzFwYkhrOUlrRnlhV0ZzSUVKc1lXTnJMSE5oYm5NdGMyVnlhV1lpSUdadmJuUXRjMmw2WlQwaU1qQWlJR1p2Ym5RdGQyVnBaMmgwUFNJNU1EQWlJR1pwYkd3OUluZG9hWFJsSWlCMFpYaDBMV0Z1WTJodmNqMGliV2xrWkd4bElpQnNaWFIwWlhJdGMzQmhZMmx1WnowaU1pSStTVXc4TDNSbGVIUStDaUFnUEhSbGVIUWdlRDBpT1RZaUlIazlJakV4T0NJZ1ptOXVkQzFtWVcxcGJIazlJa0Z5YVdGc0xITmhibk10YzJWeWFXWWlJR1p2Ym5RdGMybDZaVDBpTXpRaUlHWnZiblF0ZDJWcFoyaDBQU0k1TURBaUlHWnBiR3c5SW5kb2FYUmxJaUIwWlhoMExXRnVZMmh2Y2owaWJXbGtaR3hsSWo1SFZqd3ZkR1Y0ZEQ0S0lDQThkR1Y0ZENCNFBTSTVOaUlnZVQwaU1UUTRJaUJtYjI1MExXWmhiV2xzZVQwaVFYSnBZV3dzYzJGdWN5MXpaWEpwWmlJZ1ptOXVkQzF6YVhwbFBTSXhNeUlnWm05dWRDMTNaV2xuYUhROUlqUXdNQ0lnWm1sc2JEMGlJMkZoWVdGaFlTSWdkR1Y0ZEMxaGJtTm9iM0k5SW0xcFpHUnNaU0krTWpBeU5qd3ZkR1Y0ZEQ0S1BDOXpkbWMrIiwgInNpemVzIjogIjE5MngxOTIiLCAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIn0sIHsic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIZHBaSFJvUFNJMU1USWlJR2hsYVdkb2REMGlOVEV5SWo0S0lDQThjbVZqZENCM2FXUjBhRDBpTlRFeUlpQm9aV2xuYUhROUlqVXhNaUlnWm1sc2JEMGlJekZoTVdFeFlTSXZQZ29nSUR4eVpXTjBJSGc5SWpRd0lpQjVQU0kwTUNJZ2QybGtkR2c5SWpJd01DSWdhR1ZwWjJoMFBTSTNNaUlnY25nOUlqWWlJR1pwYkd3OUlpTkVNekpHTWtZaUx6NEtJQ0E4ZEdWNGRDQjRQU0l4TkRBaUlIazlJakV3TUNJZ1ptOXVkQzFtWVcxcGJIazlJa0Z5YVdGc0lFSnNZV05yTEhOaGJuTXRjMlZ5YVdZaUlHWnZiblF0YzJsNlpUMGlOVElpSUdadmJuUXRkMlZwWjJoMFBTSTVNREFpSUdacGJHdzlJbmRvYVhSbElpQjBaWGgwTFdGdVkyaHZjajBpYldsa1pHeGxJaUJzWlhSMFpYSXRjM0JoWTJsdVp6MGlOQ0krU1V3OEwzUmxlSFErQ2lBZ1BIUmxlSFFnZUQwaU1qVTJJaUI1UFNJek1UQWlJR1p2Ym5RdFptRnRhV3g1UFNKQmNtbGhiQ3h6WVc1ekxYTmxjbWxtSWlCbWIyNTBMWE5wZW1VOUlqZzRJaUJtYjI1MExYZGxhV2RvZEQwaU9UQXdJaUJtYVd4c1BTSjNhR2wwWlNJZ2RHVjRkQzFoYm1Ob2IzSTlJbTFwWkdSc1pTSStSMVk4TDNSbGVIUStDaUFnUEhSbGVIUWdlRDBpTWpVMklpQjVQU0l6T1RBaUlHWnZiblF0Wm1GdGFXeDVQU0pCY21saGJDeHpZVzV6TFhObGNtbG1JaUJtYjI1MExYTnBlbVU5SWpNeUlpQm1iMjUwTFhkbGFXZG9kRDBpTkRBd0lpQm1hV3hzUFNJallXRmhZV0ZoSWlCMFpYaDBMV0Z1WTJodmNqMGliV2xrWkd4bElqNHlNREkyUEM5MFpYaDBQZ284TDNOMlp6ND0iLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLCAicHVycG9zZSI6ICJhbnkgbWFza2FibGUifV19">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIj4KICA8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgZmlsbD0iIzFhMWExYSIvPgogIDxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjI4IiByeD0iMyIgZmlsbD0iI0QzMkYyRiIvPgogIDx0ZXh0IHg9IjU0IiB5PSIzNiIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iMiI+SUw8L3RleHQ+CiAgPHRleHQgeD0iOTYiIHk9IjExOCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5HVjwvdGV4dD4KICA8dGV4dCB4PSI5NiIgeT0iMTQ4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iI2FhYWFhYSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNjwvdGV4dD4KPC9zdmc+">
+<title>Illinois – Gestión de Ventas 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap');
+
+  :root {
+    --red: #D32F2F;
+    --red-dark: #B71C1C;
+    --red-light: #FFCDD2;
+    --gray-900: #1a1a1a;
+    --gray-800: #2d2d2d;
+    --gray-700: #424242;
+    --gray-600: #616161;
+    --gray-200: #eeeeee;
+    --gray-100: #f5f5f5;
+    --white: #ffffff;
+    --green: #2E7D32;
+    --green-light: #E8F5E9;
+    --orange: #E65100;
+    --orange-light: #FFF3E0;
+    --blue: #1565C0;
+    --blue-light: #E3F2FD;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: #f0f0f0;
+    color: var(--gray-900);
+    min-height: 100vh;
+  }
+
+  /* ── TOP HEADER ── */
+  .top-bar {
+    background: var(--gray-900);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 56px;
+    border-bottom: 3px solid var(--red);
+  }
+
+  .logo {
+    background: var(--red);
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 5px 14px;
+    border-radius: 2px;
+  }
+
+  .top-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .top-date {
+    margin-left: auto;
+    color: #aaa;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  /* ── TOOLBAR ── */
+  .toolbar {
+    background: white;
+    border-bottom: 1px solid var(--gray-200);
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .upload-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--red);
+    color: white;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 4px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .upload-btn:hover { background: var(--red-dark); }
+  .upload-btn svg { width:16px; height:16px; }
+
+  #fileInput { display: none; }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 12px;
+  }
+
+  .filter-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .filter-btn {
+    padding: 7px 16px;
+    border-radius: 4px;
+    border: 2px solid var(--gray-200);
+    background: white;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--gray-700);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .filter-btn.active-all   { background: var(--gray-900); color: white; border-color: var(--gray-900); }
+  .filter-btn.active-fact  { background: var(--green);    color: white; border-color: var(--green); }
+  .filter-btn.active-pend  { background: var(--orange);   color: white; border-color: var(--orange); }
+
+  .file-name {
+    font-size: 12px;
+    color: var(--gray-600);
+    font-style: italic;
+  }
+
+  .total-badge {
+    margin-left: auto;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gray-800);
+  }
+  .total-badge span { color: var(--red); font-size: 18px; }
+
+  /* ── KPI CARDS ── */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    padding: 16px 32px;
+  }
+
+  .kpi-card {
+    background: white;
+    border-radius: 6px;
+    padding: 14px 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    border-left: 4px solid var(--gray-200);
+    transition: transform 0.15s;
+  }
+  .kpi-card:hover { transform: translateY(-1px); }
+  .kpi-card.red    { border-left-color: var(--red); }
+  .kpi-card.green  { border-left-color: var(--green); }
+  .kpi-card.orange { border-left-color: var(--orange); }
+  .kpi-card.blue   { border-left-color: var(--blue); }
+
+  .kpi-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--gray-600);
+    margin-bottom: 6px;
+  }
+
+  .kpi-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--gray-900);
+    line-height: 1;
+  }
+
+  .kpi-sub {
+    font-size: 11px;
+    color: var(--gray-600);
+    margin-top: 3px;
+  }
+
+  /* ── CHARTS ROW ── */
+  .charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 0 32px 16px;
+  }
+
+  .chart-card {
+    background: white;
+    border-radius: 6px;
+    padding: 20px 20px 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+
+  .chart-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--gray-700);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gray-200);
+  }
+
+  /* ── SUMMARY TABLE ── */
+  .summary-section {
+    padding: 0 32px 16px;
+  }
+
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-600);
+    margin-bottom: 10px;
+  }
+
+  .summary-table-wrap {
+    overflow-x: auto;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .summary-table th {
+    background: #4a4a4a;
+    color: #f5f5f5;
+    padding: 8px 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    text-align: center;
+    border-right: 1px solid #5a5a5a;
+  }
+
+  .summary-table td {
+    padding: 7px 14px;
+    text-align: right;
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 1px solid #ebebeb;
+    font-weight: 600;
+    color: #444;
+  }
+
+  .summary-table td:first-child {
+    text-align: left;
+    font-weight: 700;
+    color: #333;
+    background: #e8e8e8;
+    border-right: 2px solid #ccc;
+  }
+
+  .summary-table tr.row-objetivo td { background: #f7f7f7; color: #555; }
+  .summary-table tr.row-objetivo td:first-child { background: #e8e8e8; color: #333; }
+
+  .summary-table tr.row-facturado td { background: #f2f2f2; color: #c0392b; }
+  .summary-table tr.row-facturado td:first-child { background: #e0e0e0; color: #333; }
+
+  .summary-table tr.row-pct-fact td { background: #fafafa; color: #888; font-size: 11px; font-style: italic; }
+  .summary-table tr.row-pct-fact td:first-child { background: #e8e8e8; color: #555; font-style: normal; }
+
+  .summary-table tr.row-solicitado td { background: #f9f0f0; color: #b03030; }
+  .summary-table tr.row-solicitado td:first-child { background: #e0d8d8; color: #333; }
+
+  .summary-table tr.row-pendiente td { background: #fce8e8; color: #c0392b; font-weight: 700; }
+  .summary-table tr.row-pendiente td:first-child { background: #d9c8c8; color: #222; font-weight: 800; }
+
+  /* ── MAIN TABLE ── */
+  .table-section { padding: 0 32px 32px; }
+
+  .table-wrap {
+    overflow-x: auto;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+
+  .main-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16.5px;
+    white-space: nowrap;
+    color: #1a1a1a;
+  }
+
+  .main-table thead tr:first-child th {
+    background: var(--gray-900);
+    color: white;
+    padding: 10px 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-right: 1px solid #444;
+    position: sticky;
+    top: 0;
+  }
+
+  .main-table tbody tr { border-bottom: 1px solid #f0f0f0; transition: background 0.1s; }
+  .main-table tbody tr:hover { background: #fafafa; }
+
+  .main-table tbody td {
+    padding: 8px 12px;
+    border-right: 1px solid #f0f0f0;
+    vertical-align: middle;
+    color: #1a1a1a;
+  }
+
+  /* row coloring */
+  .row-facturada { background: #f5f5f5 !important; }
+  .row-pendiente-highlight { background: #ffffff !important; }
+
+  /* badges */
+  .badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 9.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .badge-fact  { background: #d6d6d6; color: #3a3a3a; }
+  .badge-pend  { background: #ececec; color: #777; }
+
+  .pais-flag {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--gray-700);
+    background: var(--gray-100);
+    border-radius: 3px;
+    padding: 1px 6px;
+  }
+
+  .num-cell { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .lead-badge {
+    display: inline-block;
+    background: #e0e0e0;
+    color: #444;
+    border-radius: 10px;
+    padding: 1px 7px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .dias-red  { color: #c0392b; font-weight: 700; }
+
+  .badge-finalizado {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+    border-radius: 10px;
+    padding: 2px 9px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    font-family: 'Barlow', sans-serif;
+    text-transform: uppercase;
+  }
+  .dias-ok   { color: #555; font-weight: 600; }
+
+  /* empty state */
+  .empty-state {
+    text-align: center;
+    padding: 80px 32px;
+    color: var(--gray-600);
+  }
+
+  .empty-icon { font-size: 48px; margin-bottom: 16px; }
+  .empty-title { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .empty-sub { font-size: 14px; }
+
+  .progress-bar-wrap { width: 80px; height: 6px; background: #eee; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 6px; }
+  .progress-bar-fill { height: 100%; border-radius: 3px; background: var(--green); }
+
+  /* scrollable table body */
+  .table-scroll-wrap { max-height: 480px; overflow-y: auto; }
+
+  .btn-count {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    color: inherit;
+    border-radius: 8px;
+    padding: 0px 6px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-left: 4px;
+    vertical-align: middle;
+    line-height: 16px;
+  }
+  .filter-btn:not(.active-all):not(.active-fact):not(.active-pend) .btn-count {
+    background: #e8e8e8;
+    color: #666;
+  }
+
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    background: #f7f7f7;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .filter-bar-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: #888;
+    white-space: nowrap;
+  }
+
+  /* ── MULTISELECT DROPDOWN ── */
+  .select-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 190px;
+  }
+
+  .select-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #999;
+  }
+
+  .ms-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: white;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    padding: 7px 10px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    min-width: 190px;
+    transition: border-color 0.15s;
+    user-select: none;
+  }
+  .ms-trigger:hover { border-color: #aaa; }
+  .ms-trigger.has-value { border-color: #c0392b; color: #c0392b; font-weight: 600; }
+  .ms-trigger svg { flex-shrink: 0; transition: transform 0.2s; }
+  .ms-trigger.open svg { transform: rotate(180deg); }
+
+  .ms-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: #fce8e8;
+    color: #c0392b;
+    border-radius: 10px;
+    padding: 1px 7px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .ms-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 999;
+    background: white;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    min-width: 220px;
+    max-height: 260px;
+    overflow-y: auto;
+    padding: 6px 0;
+  }
+  .ms-dropdown.open { display: block; }
+
+  .ms-search {
+    width: calc(100% - 16px);
+    margin: 6px 8px;
+    padding: 6px 10px;
+    border: 1.5px solid #eee;
+    border-radius: 4px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    outline: none;
+  }
+  .ms-search:focus { border-color: #bbb; }
+
+  .ms-option {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 14px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: 'Barlow', sans-serif;
+    color: #333;
+    transition: background 0.1s;
+  }
+  .ms-option:hover { background: #f5f5f5; }
+  .ms-option input[type=checkbox] {
+    accent-color: #c0392b;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .ms-option.select-all {
+    border-bottom: 1px solid #eee;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 2px;
+  }
+
+  .clear-filters-btn {
+    background: none;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    padding: 7px 14px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    transition: all 0.15s;
+    align-self: flex-end;
+  }
+  .clear-filters-btn:hover { border-color: #c0392b; color: #c0392b; }
+
+  .results-count {
+    margin-left: auto;
+    font-size: 12px;
+    color: #888;
+    font-weight: 500;
+    align-self: flex-end;
+    padding-bottom: 1px;
+  }
+  .results-count strong { color: #333; }
+
+  @media print {
+    .filter-bar { display: none !important; }
+  }
+
+  /* ── PDF BUTTON ── */
+  .pdf-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: #3a3a3a;
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 4px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .pdf-btn:hover { background: #222; }
+  .pdf-btn svg { width:15px; height:15px; }
+
+  /* ── PRINT / PDF STYLES ── */
+  @media print {
+    @page { size: A4 portrait; margin: 14mm 12mm 14mm 12mm; }
+
+    .toolbar, .upload-btn, .pdf-btn, .filter-group, .file-name { display: none !important; }
+    .table-scroll-wrap { max-height: none !important; overflow: visible !important; }
+
+    body { background: white !important; font-size: 9pt; color: #000; }
+
+    .top-bar {
+      background: #1a1a1a !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      padding: 6px 16px !important;
+      height: auto !important;
+      margin-bottom: 6mm;
+    }
+
+    .kpi-row {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 6px !important;
+      padding: 0 0 4mm !important;
+      page-break-inside: avoid;
+    }
+    .kpi-card {
+      padding: 6px 10px !important;
+      box-shadow: none !important;
+      border: 1px solid #ddd !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .kpi-value { font-size: 16pt !important; }
+    .kpi-label { font-size: 7pt !important; }
+    .kpi-sub   { font-size: 7pt !important; }
+
+    .charts-row {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 8px !important;
+      padding: 0 0 4mm !important;
+      page-break-inside: avoid;
+      page-break-after: always;
+    }
+    .chart-card {
+      box-shadow: none !important;
+      border: 1px solid #ddd !important;
+      padding: 10px !important;
+    }
+    .chart-title { font-size: 8pt !important; margin-bottom: 6px !important; }
+
+    .summary-section {
+      padding: 0 0 4mm !important;
+      page-break-inside: avoid;
+      page-break-after: always;
+    }
+    .summary-table-wrap { box-shadow: none !important; border: 1px solid #ccc !important; }
+    .summary-table th {
+      font-size: 7pt !important;
+      padding: 4px 6px !important;
+      background: #3a3a3a !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .summary-table td { font-size: 7.5pt !important; padding: 4px 6px !important; }
+    .summary-table tr.row-objetivo td,
+    .summary-table tr.row-facturado td,
+    .summary-table tr.row-pct-fact td,
+    .summary-table tr.row-solicitado td,
+    .summary-table tr.row-pendiente td {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .table-section { padding: 0 !important; page-break-before: always; }
+    .table-wrap { box-shadow: none !important; border: 1px solid #ccc !important; }
+    .main-table thead tr:first-child th {
+      font-size: 7.5pt !important;
+      padding: 5px 7px !important;
+      background: #3a3a3a !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      position: static !important;
+    }
+    .main-table tbody td { font-size: 8pt !important; padding: 4px 7px !important; }
+    .main-table tbody tr { page-break-inside: avoid; }
+    .row-facturada, .row-pendiente-highlight {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .badge { font-size: 6.5pt !important; padding: 1px 5px !important; }
+    .pais-flag { font-size: 7pt !important; }
+    .lead-badge { font-size: 7pt !important; }
+    .section-title { font-size: 8pt !important; margin-bottom: 4px !important; }
+  }
+
+  /* ══════════════════════════════════════════════
+     MOBILE RESPONSIVE  – max-width: 768px
+  ══════════════════════════════════════════════ */
+  @media (max-width: 768px) {
+
+    /* ── Header ── */
+    .top-bar {
+      padding: 0 16px;
+      height: 48px;
+    }
+    .top-title { font-size: 16px; }
+    .top-date  { display: none; }
+
+    /* ── Toolbar ── */
+    .toolbar {
+      padding: 10px 14px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .upload-btn { font-size: 12px; padding: 8px 14px; }
+    .file-name  { font-size: 11px; max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .filter-group { width: 100%; justify-content: flex-start; flex-wrap: wrap; }
+    .filter-btn { font-size: 11px; padding: 6px 11px; }
+    .total-badge { font-size: 13px; }
+    .pdf-btn { font-size: 12px; padding: 8px 12px; }
+
+    /* ── Filter bar ── */
+    .filter-bar {
+      padding: 10px 14px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .filter-bar-label { width: 100%; margin-bottom: 2px; }
+    .select-wrap { min-width: calc(50% - 8px); flex: 1 1 calc(50% - 8px); }
+    .ms-trigger  { min-width: unset; width: 100%; font-size: 12px; }
+    .ms-dropdown { min-width: 200px; }
+    .clear-filters-btn { font-size: 11px; padding: 6px 12px; }
+    .results-count { width: 100%; text-align: right; font-size: 11px; margin-left: 0; }
+
+    /* ── KPI cards – 2x2 grid ── */
+    .kpi-row {
+      grid-template-columns: 1fr 1fr;
+      padding: 12px 14px;
+      gap: 10px;
+    }
+    .kpi-card   { padding: 10px 12px; }
+    .kpi-value  { font-size: 20px; }
+    .kpi-label  { font-size: 9px; }
+    .kpi-sub    { font-size: 10px; }
+
+    /* ── Charts – stack vertically ── */
+    .charts-row {
+      grid-template-columns: 1fr;
+      padding: 0 14px 14px;
+      gap: 12px;
+    }
+
+    /* ── Summary table – horizontal scroll ── */
+    .summary-section { padding: 0 14px 14px; }
+    .summary-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .summary-table th, .summary-table td { font-size: 11px; padding: 6px 10px; }
+
+    /* ── Detail table – same as desktop, horizontal scroll ── */
+    .table-section { padding: 0 14px 24px; }
+    .table-wrap {
+      border-radius: 6px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .table-scroll-wrap { max-height: none; overflow: visible; }
+
+    /* Keep table as normal table – horizontal scroll */
+    .table-wrap {
+      position: relative;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch;
+    }
+    .main-table {
+      display: table !important;
+      width: auto !important;
+      min-width: 860px;
+      table-layout: fixed;
+    }
+    .main-table thead { display: table-header-group !important; }
+    .main-table tbody { display: table-row-group !important; }
+
+    /* Fixed column widths — header and body must match */
+    .main-table thead tr:first-child th:nth-child(1)  { width: 90px;  }
+    .main-table thead tr:first-child th:nth-child(2)  { width: 90px;  }
+    .main-table thead tr:first-child th:nth-child(3)  { width: 65px;  }
+    .main-table thead tr:first-child th:nth-child(4)  { width: 75px;  }
+    .main-table thead tr:first-child th:nth-child(5)  { width: 130px; }
+    .main-table thead tr:first-child th:nth-child(6)  { width: 90px;  }
+    .main-table thead tr:first-child th:nth-child(7)  { width: 100px; }
+    .main-table thead tr:first-child th:nth-child(8)  { width: 70px;  }
+    .main-table thead tr:first-child th:nth-child(9)  { width: 55px;  }
+    .main-table thead tr:first-child th:nth-child(10) { width: 85px;  }
+    .main-table thead tr:first-child th:nth-child(11) { width: 85px;  }
+
+    .main-table thead tr:first-child th {
+      font-size: 10px !important;
+      padding: 8px 6px !important;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .main-table tbody tr {
+      display: table-row !important;
+      border-bottom: 1px solid #f0f0f0;
+      border-radius: 0;
+      margin-bottom: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    .main-table tbody tr.row-facturada        { background: #f5f5f5 !important; }
+    .main-table tbody tr.row-pendiente-highlight { background: white !important; }
+
+    .main-table tbody td {
+      display: table-cell !important;
+      padding: 7px 6px !important;
+      font-size: 12px !important;
+      border-right: 1px solid #f0f0f0;
+      vertical-align: middle;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .main-table tbody td::before { display: none !important; }
+    .main-table tbody td:first-child { text-align: center; width: 90px; }
+
+    .badge      { font-size: 9px !important; padding: 2px 5px !important; }
+    .pais-flag  { font-size: 10px !important; }
+    .lead-badge { font-size: 10px !important; }
+    .num-cell   { text-align: right; }
+
+    /* Section titles */
+    .section-title { padding: 0; margin-bottom: 8px; }
+  }
+
+  @media (max-width: 400px) {
+    .kpi-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .select-wrap { min-width: 100%; flex: 1 1 100%; }
+  }
+
+
+  .install-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: #D32F2F;
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 4px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 0.3px;
+    animation: pulse-red 2s infinite;
+  }
+  .install-btn:hover { background: #B71C1C; }
+  .install-btn svg { width:15px; height:15px; }
+
+  @keyframes pulse-red {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(211,47,47,0.4); }
+    50%       { box-shadow: 0 0 0 6px rgba(211,47,47,0); }
+  }
+
+  @media (max-width: 768px) {
+    .install-btn { font-size: 12px; padding: 8px 12px; }
+  }
+
+
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  #syncIcon { transform-origin: center; display: inline-block; }
+  #syncStatus { font-size: 12px; color: #666; font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="top-bar">
+  <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCADIAlgDASIAAhEBAxEB/8QAHQABAAAHAQEAAAAAAAAAAAAAAAECAwQFBwgGCf/EAFgQAAEDAgIDCQcPCAYLAQEAAAEAAgMEBQYRBxIxCBMhQVFxkbHRMlVhgZOhshQVFhciIzNCQ1JUYnJzwTVEZHSSo7PSGCQlRYKDJic0NjdTVmOElKLh8f/EABwBAQABBQEBAAAAAAAAAAAAAAAFAQMEBgcCCP/EAEURAAIBAgIDDAYIBAYDAQAAAAABAgMEBREGEjEUFSEyQVFScZGSsdETIjNTYYEHNEJUcqHB8BY1guEXIyRDYrKiwvEl/9oADAMBAAIRAxEAPwDjJERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERABwlZ5uEMQOY14oeBwzHvjdnSpLdhXEFdDHUUlsllieAWuBGRHSttPtl4MMTWUMp1WAHoVp16S4HJdpmxw28ks1Sl3Wao9iGIPoP7xvansQxB9B/eN7VtL1qv3e2bpCj6137P8AJs3SO1U3TR6a7T1vVe+5l3X5GrfYfiD6D+8b2qPsOxD9BHlG9q2kLZfe9s3SFOLbfe9s3SE3TQ6a7UN6r73Mu6/I1V7DcQ/Qh5Rvao+wzEX0EeVb2rawt98H92zdIVQUN672y+btTdNDprtRXem+9zLuvyNTewvEX0EeVb2p7CsR/QR5VvatuNo7xx26XzKdtLdhtt0vmTdNHprtQ3pv/cy7r8jUPsJxJ9AHlW9qiMD4lOy3/vG9q3C2nug22+XzKoxlyb/d8ibpodNdqG9F/wC4l3X5Gm/YNibvf+8b2qPsExP3u/eN7VuhvrgNtvkVVslcNtBIm6aHTXaiu9GIe4n3X5GkvYHijvafKN7VH2BYq72Hyje1bwbUVY20D1VbV1A20L03TQ6a7UN58Q9xPuvyNFjAGK+9h8o3tUfa+xZ3rPlG9q3w2vlG2hd0Ksy6PG2id0Ku6KHTXahvPiHuJ91+RoMaPcWn+6j5Rvantd4v70u8o3tXQLbzq7aN3QqgvrBtpD0Juij012obzYj7ifdfkc9+11i/vS7yje1Pa6xf3pd5RvauhfX+Mfmh6FMMQQj81Kboo9NdqK7zYj7ifdfkc8+1zjDvS7yje1R9rjGPel3lG9q6HGI6cbaY9CmGJaYfm/mTdFHprtG8uJfd591+Rzt7W+Me9DvKN7VH2tsZd6HeUb2rooYopBtp/Mp24qoh+b+ZN0Uemu1Fd5cS+7z7r8jnL2tcZ953eUb2qPtaYz7zv8o3tXR7cW0A/Nx0FTjGFvHyH/yU3RR6a7RvJiX3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NWFRirEMxOvdJxnxMIb1LCogLqe43CfgmrqmQfWlJVs5xcc3Ek+EqCIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAma5zTm1xbzHJXtLebvSkGnudZFls1ZnDLzqwRAelpMeYupchFfaogfPId1q9m0mYwlj1XXJoOXdCJua8aiAztTjDE9Sffb1V/4X6vUsZUXG4VGe/11TLn8+Vx/FWqICJJJzJJPhUERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAf/9k=" alt="Illinois" style="height:38px; width:auto; display:block; object-fit:contain;">
+  <div class="top-title">Gestión de Ventas 2026</div>
+  <div class="top-date" id="topDate"></div>
+</div>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <input type="file" id="fileInput" accept=".xlsx,.xls" style="display:none">
+  <button class="upload-btn" id="syncBtn" onclick="loadFromSheets()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" id="syncIcon"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+    Actualizar datos
+  </button>
+  <span class="file-name" id="fileName">
+    <span id="syncStatus">Conectado a Google Sheets ☁️</span>
+  </span>
+
+  <div class="filter-group">
+    <span class="filter-label">Filtrar:</span>
+    <button class="filter-btn active-all" id="btnAll"   onclick="setFilter('all')">Todos <span class="btn-count" id="cntAll"></span></button>
+    <button class="filter-btn"            id="btnFact"  onclick="setFilter('facturado')">✓ Facturados <span class="btn-count" id="cntFact"></span></button>
+    <button class="filter-btn"            id="btnPend"  onclick="setFilter('pendiente')">⏳ Pendientes <span class="btn-count" id="cntPend"></span></button>
+  </div>
+
+  <div class="total-badge" id="totalBadge">Total: <span>$0</span></div>
+
+  <button class="pdf-btn" onclick="exportPDF()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+    Exportar PDF
+  </button>
+  <button class="install-btn" id="installBtn" onclick="installApp()" style="display:none;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v13"/><path d="M7 11l5 5 5-5"/><rect x="2" y="17" width="20" height="5" rx="1"/></svg>
+    Instalar App
+  </button>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-bar-label">🔍 Filtros</span>
+
+  <!-- PAÍS multiselect -->
+  <div class="select-wrap" id="wrapPais">
+    <span class="select-label">País</span>
+    <div class="ms-trigger" id="triggerPais" onclick="toggleDropdown('Pais')">
+      <span id="labelPais">Todos los países</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="ms-dropdown" id="dropPais">
+      <input class="ms-search" type="text" placeholder="Buscar país…" oninput="searchOptions('Pais', this.value)">
+      <div id="optsPais"></div>
+    </div>
+  </div>
+
+  <!-- CLIENTE multiselect -->
+  <div class="select-wrap" id="wrapCliente">
+    <span class="select-label">Cliente</span>
+    <div class="ms-trigger" id="triggerCliente" onclick="toggleDropdown('Cliente')">
+      <span id="labelCliente">Todos los clientes</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="ms-dropdown" id="dropCliente">
+      <input class="ms-search" type="text" placeholder="Buscar cliente…" oninput="searchOptions('Cliente', this.value)">
+      <div id="optsCliente"></div>
+    </div>
+  </div>
+
+  <button class="clear-filters-btn" onclick="clearDropdownFilters()">✕ Limpiar filtros</button>
+  <span class="results-count" id="resultsCount"></span>
+</div>
+
+<!-- KPI ROW -->
+<div class="kpi-row" id="kpiRow">
+  <div class="kpi-card red">
+    <div class="kpi-label">Total Solicitado</div>
+    <div class="kpi-value" id="kpiTotal">$0</div>
+    <div class="kpi-sub" id="kpiCount">0 pedidos</div>
+  </div>
+  <div class="kpi-card green">
+    <div class="kpi-label">Facturado USD</div>
+    <div class="kpi-value" id="kpiFact">$0</div>
+    <div class="kpi-sub" id="kpiFactPct">0% del solicitado</div>
+  </div>
+  <div class="kpi-card orange">
+    <div class="kpi-label">Pendiente</div>
+    <div class="kpi-value" id="kpiPend">$0</div>
+    <div class="kpi-sub" id="kpiPendCount">0 pedidos</div>
+  </div>
+  <div class="kpi-card blue">
+    <div class="kpi-label">Objetivo Anual</div>
+    <div class="kpi-value" id="kpiObj">$1.015.000</div>
+    <div class="kpi-sub" id="kpiObjPct">0% alcanzado</div>
+  </div>
+</div>
+
+<!-- CHARTS -->
+<div class="charts-row">
+  <div class="chart-card">
+    <div class="chart-title">Facturación 2026 por País (Objetivo vs. Solicitado)</div>
+    <canvas id="chartBar" height="200"></canvas>
+  </div>
+  <div class="chart-card">
+    <div class="chart-title">Distribución de Pedidos por País</div>
+    <canvas id="chartPie" height="200"></canvas>
+  </div>
+</div>
+
+<!-- SUMMARY TABLE -->
+<div class="summary-section">
+  <div class="section-title">Resumen por País</div>
+  <div class="summary-table-wrap">
+    <table class="summary-table" id="summaryTable">
+      <thead><tr id="summaryHead"></tr></thead>
+      <tbody id="summaryBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- MAIN DATA TABLE -->
+<div class="table-section">
+  <div class="section-title">Detalle de Pedidos</div>
+  <div class="table-wrap">
+    <div class="table-scroll-wrap">
+      <table class="main-table" id="mainTable">
+        <thead>
+          <tr>
+            <th style="width:90px; min-width:90px; text-align:center;">Estado</th>
+            <th>País</th>
+            <th>Pedido</th>
+            <th>N° Cliente</th>
+            <th>Cliente</th>
+            <th>Fecha Confirm.</th>
+            <th id="thUSD" style="vertical-align:top; line-height:1.3;">
+              USD Solicitado
+              <div id="usdTotal" style="font-size:13px; font-weight:800; color:#76d97e; margin-top:3px; letter-spacing:0; font-family:'Barlow Condensed',sans-serif;">—</div>
+            </th>
+            <th>Lead Time</th>
+            <th>Días</th>
+            <th>Est. Planta</th>
+            <th>Act. Planta</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr><td colspan="11">
+            <div class="empty-state">
+              <div class="empty-icon">📂</div>
+              <div class="empty-title">Cargá el archivo Excel para comenzar</div>
+              <div class="empty-sub">Seleccioná el archivo GESTIÓN DE VENTAS 2026 (.xlsx)</div>
+            </div>
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ─── STATE ───────────────────────────────────────────────────────────────────
+  let allRows = [];
+  let summaryData = {};
+  let currentFilter = 'all';
+  let filterPais = new Set();    // Set of selected países
+  let filterCliente = new Set(); // Set of selected clientes
+  let allPaises = [];
+  let allClientes = [];
+  let barChart = null;
+  let pieChart = null;
+
+  const COUNTRIES = ['BOLIVIA','CHILE','CA','COLOMBIA','ECUADOR','ESTADOS UNIDOS','FRANCIA','IRÁN','MÉXICO','PARAGUAY','PERÚ','RESTO M','URUGUAY','VENEZUELA'];
+  const COUNTRY_COLORS = {
+    'BOLIVIA':'#8D6E63','CHILE':'#EF5350','CA':'#AB47BC','COLOMBIA':'#FFB300',
+    'ECUADOR':'#26C6DA','ESTADOS UNIDOS':'#42A5F5','FRANCIA':'#5C6BC0','IRÁN':'#66BB6A',
+    'MÉXICO':'#EC407A','PARAGUAY':'#26A69A','PERÚ':'#FFA726','RESTO M':'#78909C',
+    'URUGUAY':'#29B6F6','VENEZUELA':'#D32F2F'
+  };
+
+  // ─── PDF EXPORT ─────────────────────────────────────────────────────────────
+  function exportPDF() {
+    if (allRows.length === 0) {
+      alert('Por favor cargá un archivo Excel primero.');
+      return;
+    }
+    // Temporarily remove scroll constraint so full table prints
+    const scrollWrap = document.querySelector('.table-scroll-wrap');
+    const prevMax = scrollWrap.style.maxHeight;
+    scrollWrap.style.maxHeight = 'none';
+    scrollWrap.style.overflow = 'visible';
+
+    window.print();
+
+    // Restore after print dialog closes
+    setTimeout(() => {
+      scrollWrap.style.maxHeight = prevMax || '';
+      scrollWrap.style.overflow = '';
+    }, 1000);
+  }
+
+  // ─── DATE ────────────────────────────────────────────────────────────────────
+  document.getElementById('topDate').textContent = new Date().toLocaleDateString('es-AR', {day:'2-digit',month:'long',year:'numeric'});
+
+  // ─── GOOGLE SHEETS LOADER ────────────────────────────────────────────────────
+  const SHEETS_API = 'https://script.google.com/macros/s/AKfycbxQabp4B8ehDOVwdbEilyFfekC18L3QC2TczUUC2c-9VYLBDzfEQAbYHeq91lykPxgG/exec';
+
+  async function loadFromSheets() {
+    const btn    = document.getElementById('syncBtn');
+    const status = document.getElementById('syncStatus');
+    const icon   = document.getElementById('syncIcon');
+
+    // Animate
+    btn.disabled = true;
+    icon.style.animation = 'spin 1s linear infinite';
+    status.innerHTML = '⏳ Actualizando...';
+
+    try {
+      const res  = await fetch(SHEETS_API);
+      const data = await res.json();
+      parseFromSheets(data.rows);
+
+      const now = new Date().toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit'});
+      status.innerHTML = `✅ Actualizado a las ${now}`;
+    } catch(err) {
+      status.innerHTML = '❌ Error al conectar. Revisá tu conexión.';
+      console.error(err);
+    } finally {
+      btn.disabled = false;
+      icon.style.animation = '';
+    }
+  }
+
+  function parseFromSheets(rows) {
+    allRows = rows.map(r => ({
+      pais:           r.pais           || '',
+      pedido:         r.pedido         || '',
+      numero:         r.numero         || '',
+      cliente:        r.cliente        || '',
+      fechaConfirm:   r.fechaConfirm   || '',
+      usd:            Number(r.usd)    || 0,
+      leadTime:       r.leadTime       || '',
+      dias:           r.dias           || '',
+      estimadoPlanta: r.estimadoPlanta || '',
+      actualizPlanta: r.actualizPlanta || '',
+      facturaNum:     r.facturaNum     || '',
+      importeFOB:     Number(r.importeFOB) || 0,
+    }));
+
+    // Build summary from data
+    const facturadoByCountry = {};
+    const solicitadoByCountry = {};
+    COUNTRIES.forEach(c => { facturadoByCountry[c] = 0; solicitadoByCountry[c] = 0; });
+    allRows.forEach(row => {
+      if (COUNTRIES.includes(row.pais)) {
+        solicitadoByCountry[row.pais] = (solicitadoByCountry[row.pais]||0) + row.usd;
+        if (row.facturaNum && row.importeFOB)
+          facturadoByCountry[row.pais] = (facturadoByCountry[row.pais]||0) + row.importeFOB;
+      }
+    });
+
+    const pendienteByCountry = {};
+    COUNTRIES.forEach(c => { pendienteByCountry[c] = solicitadoByCountry[c] - facturadoByCountry[c]; });
+
+    const OBJETIVO = {
+      'BOLIVIA':25000,'CHILE':250000,'CA':15000,'COLOMBIA':80000,
+      'ECUADOR':35000,'ESTADOS UNIDOS':15000,'FRANCIA':10000,'IRÁN':0,
+      'MÉXICO':45000,'PARAGUAY':70000,'PERÚ':40000,'RESTO M':50000,
+      'URUGUAY':180000,'VENEZUELA':200000
+    };
+
+    const pctFact = {};
+    const pctSol  = {};
+    COUNTRIES.forEach(c => {
+      pctFact[c] = OBJETIVO[c] ? facturadoByCountry[c]  / OBJETIVO[c] : 0;
+      pctSol[c]  = OBJETIVO[c] ? solicitadoByCountry[c] / OBJETIVO[c] : 0;
+    });
+
+    summaryData = {
+      objetivo:   OBJETIVO,
+      facturado:  facturadoByCountry,
+      pctFact:    pctFact,
+      solicitado: solicitadoByCountry,
+      pendiente:  pendienteByCountry,
+    };
+
+    renderAll();
+  }
+
+  // ─── AUTO-LOAD on startup ─────────────────────────────────────────────────
+  window.addEventListener('load', () => loadFromSheets());
+
+  // ─── FILTER ──────────────────────────────────────────────────────────────────
+  function setFilter(f) {
+    currentFilter = f;
+    ['All','Fact','Pend'].forEach(k => {
+      const btn = document.getElementById('btn'+k);
+      btn.className = 'filter-btn';
+    });
+    if (f === 'all')        { document.getElementById('btnAll').className  = 'filter-btn active-all'; }
+    if (f === 'facturado')  { document.getElementById('btnFact').className = 'filter-btn active-fact'; }
+    if (f === 'pendiente')  { document.getElementById('btnPend').className = 'filter-btn active-pend'; }
+    renderTable();
+  }
+
+  function isFacturado(row) { return !!(row.facturaNum && row.importeFOB); }
+
+  function getFiltered() {
+    return allRows.filter(row => {
+      if (currentFilter === 'facturado' && !isFacturado(row)) return false;
+      if (currentFilter === 'pendiente' && isFacturado(row)) return false;
+      if (filterPais.size    > 0 && !filterPais.has(row.pais))       return false;
+      if (filterCliente.size > 0 && !filterCliente.has(row.cliente)) return false;
+      return true;
+    });
+  }
+
+  // ─── RENDER ALL ──────────────────────────────────────────────────────────────
+  function renderAll() {
+    populateDropdowns();
+    renderKPIs();
+    renderSummaryTable();
+    renderCharts();
+    renderTable();
+  }
+
+  // ─── KPIs ─────────────────────────────────────────────────────────────────────
+  function renderKPIs() {
+    const total = allRows.reduce((s, r) => s + (r.usd || 0), 0);
+    const facturado = allRows.reduce((s, r) => s + (r.importeFOB || 0), 0);
+    // Pendiente = suma directa del USD solicitado de pedidos sin factura
+    const pendiente = allRows.filter(r => !isFacturado(r)).reduce((s, r) => s + (r.usd || 0), 0);
+    const pendCount = allRows.filter(r => !isFacturado(r)).length;
+    const obj = 1015000;
+
+    document.getElementById('kpiTotal').textContent  = fmt(total);
+    document.getElementById('kpiCount').textContent  = `${allRows.length} pedidos`;
+    document.getElementById('kpiFact').textContent   = fmt(facturado);
+    document.getElementById('kpiFactPct').textContent = `${pct(facturado, total)} del solicitado`;
+    document.getElementById('kpiPend').textContent   = fmt(pendiente);
+    document.getElementById('kpiPendCount').textContent = `${pendCount} pedidos pendientes`;
+    document.getElementById('kpiObj').textContent    = fmt(obj);
+    document.getElementById('kpiObjPct').textContent = `${pct(facturado, obj)} alcanzado`;
+    document.getElementById('totalBadge').innerHTML  = `Total: <span>${fmt(total)}</span>`;
+  }
+
+  // ─── SUMMARY TABLE ───────────────────────────────────────────────────────────
+  function renderSummaryTable() {
+    if (!Object.keys(summaryData).length) return;
+    const head = document.getElementById('summaryHead');
+    const body = document.getElementById('summaryBody');
+
+    const cols = COUNTRIES.concat(['Total']);
+    head.innerHTML = '<th>Concepto</th>' + cols.map(c => `<th>${c}</th>`).join('');
+
+    const rows = [
+      { key: 'objetivo',   label: 'Objetivo',     cls: 'row-objetivo',    fmt: fmtK },
+      { key: 'facturado',  label: 'Facturado',    cls: 'row-facturado',   fmt: fmtK },
+      { key: 'pctFact',    label: '% Facturado',  cls: 'row-pct-fact',    fmt: v => v ? (v*100).toFixed(0)+'%' : '-' },
+      { key: 'solicitado', label: 'Solicitado',   cls: 'row-solicitado',  fmt: fmtK },
+      { key: 'pendiente',  label: 'Pendiente',    cls: 'row-pendiente',   fmt: fmtK },
+    ];
+
+    // Compute facturado total
+    const factTotal = Object.values(summaryData['facturado'] || {}).reduce((a,b)=>a+b,0);
+    summaryData['facturado']['Total'] = factTotal;
+
+    body.innerHTML = rows.map(row => {
+      const tds = cols.map(c => {
+        const v = (summaryData[row.key] || {})[c];
+        return `<td>${v !== undefined && v !== null ? row.fmt(v) : '-'}</td>`;
+      }).join('');
+      return `<tr class="${row.cls}"><td>${row.label}</td>${tds}</tr>`;
+    }).join('');
+  }
+
+  // ─── CHARTS ──────────────────────────────────────────────────────────────────
+  function renderCharts() {
+    if (!Object.keys(summaryData).length) return;
+
+    // Bar chart
+    const objetivo   = COUNTRIES.map(c => (summaryData.objetivo   || {})[c] || 0);
+    const solicitado = COUNTRIES.map(c => (summaryData.solicitado || {})[c] || 0);
+    const facturado  = COUNTRIES.map(c => (summaryData.facturado  || {})[c] || 0);
+
+    if (barChart) barChart.destroy();
+    const ctx1 = document.getElementById('chartBar').getContext('2d');
+    barChart = new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: COUNTRIES.map(c => c.length > 9 ? c.substring(0,7)+'…' : c),
+        datasets: [
+          { label: 'Objetivo',   data: objetivo,   backgroundColor: 'rgba(211,47,47,0.20)', borderColor: 'rgba(211,47,47,0.6)', borderWidth: 1.5 },
+          { label: 'Solicitado', data: solicitado, backgroundColor: 'rgba(230,81,0,0.30)',  borderColor: 'rgba(230,81,0,0.7)',  borderWidth: 1.5 },
+          { label: 'Facturado',  data: facturado,  backgroundColor: 'rgba(46,125,50,0.55)', borderColor: 'rgba(46,125,50,0.9)', borderWidth: 1.5 },
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { position:'top', labels: { font:{size:10}, boxWidth:12 } } },
+        scales: {
+          y: { ticks: { callback: v => fmtK(v), font:{size:10} }, grid:{color:'#f0f0f0'} },
+          x: { ticks: { font:{size:10} }, grid:{display:false} }
+        }
+      }
+    });
+
+    // Pie chart – by country total USD
+    const countByCountry = {};
+    allRows.forEach(r => { countByCountry[r.pais] = (countByCountry[r.pais]||0) + (r.usd||0); });
+    const pieCountries = Object.keys(countByCountry).filter(k => countByCountry[k] > 0);
+
+    if (pieChart) pieChart.destroy();
+    const ctx2 = document.getElementById('chartPie').getContext('2d');
+    pieChart = new Chart(ctx2, {
+      type: 'doughnut',
+      data: {
+        labels: pieCountries,
+        datasets: [{
+          data: pieCountries.map(k => countByCountry[k]),
+          backgroundColor: pieCountries.map(k => COUNTRY_COLORS[k] || '#90A4AE'),
+          borderWidth: 2,
+          borderColor: 'white'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position:'right', labels: { font:{size:10}, boxWidth:12 } },
+          tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${fmt(ctx.raw)}` } }
+        }
+      }
+    });
+  }
+
+  // ─── POPULATE DROPDOWNS ─────────────────────────────────────────────────────
+  // ─── MULTISELECT LOGIC ───────────────────────────────────────────────────────
+  function toggleDropdown(which) {
+    const drop = document.getElementById('drop' + which);
+    const trigger = document.getElementById('trigger' + which);
+    const other = which === 'Pais' ? 'Cliente' : 'Pais';
+    document.getElementById('drop' + other).classList.remove('open');
+    document.getElementById('trigger' + other).classList.remove('open');
+    drop.classList.toggle('open');
+    trigger.classList.toggle('open');
+  }
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    ['Pais','Cliente'].forEach(w => {
+      const wrap = document.getElementById('wrap' + w);
+      if (wrap && !wrap.contains(e.target)) {
+        document.getElementById('drop' + w).classList.remove('open');
+        document.getElementById('trigger' + w).classList.remove('open');
+      }
+    });
+  });
+
+  function buildOptions(which, items, selectedSet) {
+    const container = document.getElementById('opts' + which);
+    if (!container) return;
+    const allChecked = selectedSet.size === 0;
+    container.innerHTML =
+      `<label class="ms-option select-all">
+        <input type="checkbox" ${allChecked ? 'checked' : ''} onchange="toggleSelectAll('${which}', this)"> Seleccionar todos
+      </label>`
+      + items.map(v =>
+        `<label class="ms-option" data-val="${escHtml(v)}">
+          <input type="checkbox" value="${escHtml(v)}" ${selectedSet.has(v) ? 'checked' : ''} onchange="toggleOption('${which}', '${escHtml(v)}', this)">
+          ${escHtml(v)}
+        </label>`
+      ).join('');
+  }
+
+  function searchOptions(which, query) {
+    const container = document.getElementById('opts' + which);
+    const q = query.toLowerCase();
+    container.querySelectorAll('.ms-option:not(.select-all)').forEach(opt => {
+      opt.style.display = opt.dataset.val.toLowerCase().includes(q) ? '' : 'none';
+    });
+  }
+
+  function toggleSelectAll(which, cb) {
+    const filterSet = which === 'Pais' ? filterPais : filterCliente;
+    filterSet.clear();
+    const container = document.getElementById('opts' + which);
+    container.querySelectorAll('.ms-option:not(.select-all) input').forEach(inp => {
+      inp.checked = false;
+    });
+    updateTriggerLabel(which);
+    applyDropdownFilters();
+  }
+
+  function toggleOption(which, val, cb) {
+    const filterSet = which === 'Pais' ? filterPais : filterCliente;
+    if (cb.checked) filterSet.add(val);
+    else filterSet.delete(val);
+
+    // Update "select all" checkbox
+    const container = document.getElementById('opts' + which);
+    const allCb = container.querySelector('.select-all input');
+    if (allCb) allCb.checked = filterSet.size === 0;
+
+    // If país filter changed, rebuild cliente options
+    if (which === 'Pais') {
+      const validRows = filterPais.size > 0 ? allRows.filter(r => filterPais.has(r.pais)) : allRows;
+      allClientes = [...new Set(validRows.map(r => r.cliente).filter(Boolean))].sort();
+      // Remove selected clientes no longer valid
+      [...filterCliente].forEach(c => { if (!allClientes.includes(c)) filterCliente.delete(c); });
+      buildOptions('Cliente', allClientes, filterCliente);
+      updateTriggerLabel('Cliente');
+    }
+
+    updateTriggerLabel(which);
+    applyDropdownFilters();
+  }
+
+  function updateTriggerLabel(which) {
+    const filterSet = which === 'Pais' ? filterPais : filterCliente;
+    const trigger   = document.getElementById('trigger' + which);
+    const label     = document.getElementById('label' + which);
+    const defaultTxt = which === 'Pais' ? 'Todos los países' : 'Todos los clientes';
+
+    if (filterSet.size === 0) {
+      label.textContent = defaultTxt;
+      trigger.classList.remove('has-value');
+    } else if (filterSet.size === 1) {
+      label.textContent = [...filterSet][0];
+      trigger.classList.add('has-value');
+    } else {
+      label.innerHTML = `<span class="ms-tag">${filterSet.size} seleccionados</span>`;
+      trigger.classList.add('has-value');
+    }
+  }
+
+  function populateDropdowns() {
+    allPaises   = [...new Set(allRows.map(r => r.pais).filter(Boolean))].sort();
+    allClientes = [...new Set(allRows.map(r => r.cliente).filter(Boolean))].sort();
+    buildOptions('Pais',    allPaises,   filterPais);
+    buildOptions('Cliente', allClientes, filterCliente);
+    updateTriggerLabel('Pais');
+    updateTriggerLabel('Cliente');
+  }
+
+  function applyDropdownFilters() {
+    renderTable();
+  }
+
+  function clearDropdownFilters() {
+    filterPais.clear();
+    filterCliente.clear();
+    populateDropdowns();
+    renderTable();
+  }
+
+  function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  // ─── MAIN TABLE ──────────────────────────────────────────────────────────────
+  function renderTable() {
+    const rows = getFiltered();
+    const tbody = document.getElementById('tableBody');
+
+    if (!rows.length) {
+      tbody.innerHTML = `<tr><td colspan="11"><div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-title">Sin resultados</div><div class="empty-sub">No hay pedidos para el filtro seleccionado.</div></div></td></tr>`;
+      return;
+    }
+
+    // Update results count
+    const countEl = document.getElementById('resultsCount');
+    if (countEl) countEl.innerHTML = `Mostrando <strong>${rows.length}</strong> de <strong>${allRows.length}</strong> pedidos`;
+
+    // Update button counts
+    const totalFiltered   = allRows.filter(r => {
+      if (filterPais.size    > 0 && !filterPais.has(r.pais))       return false;
+      if (filterCliente.size > 0 && !filterCliente.has(r.cliente)) return false;
+      return true;
+    });
+    const nFact = totalFiltered.filter(isFacturado).length;
+    const nPend = totalFiltered.filter(r => !isFacturado(r)).length;
+    const nAll  = totalFiltered.length;
+    const elAll  = document.getElementById('cntAll');
+    const elFact = document.getElementById('cntFact');
+    const elPend = document.getElementById('cntPend');
+    if (elAll)  elAll.textContent  = nAll;
+    if (elFact) elFact.textContent = nFact;
+    if (elPend) elPend.textContent = nPend;
+
+    // Update USD total in column header
+    const usdSum = rows.reduce((s, r) => s + (r.usd || 0), 0);
+    const usdTotalEl = document.getElementById('usdTotal');
+    if (usdTotalEl) usdTotalEl.textContent = usdSum > 0 ? fmt(usdSum) : '—';
+
+    tbody.innerHTML = rows.map(row => {
+      const fact = isFacturado(row);
+      const trCls = fact ? 'row-facturada' : 'row-pendiente-highlight';
+      const badge = fact
+        ? `<span class="badge badge-fact">✓ Facturado</span>`
+        : `<span class="badge badge-pend">⏳ Pendiente</span>`;
+
+      const diasCell = row.dias
+        ? `<span class="${row.dias > 90 ? 'dias-red':'dias-ok'}">${row.dias}</span>`
+        : '—';
+
+      return `<tr class="${trCls}">
+        <td style="text-align:center; width:90px;">${badge}</td>
+        <td data-label="País"><span class="pais-flag">${row.pais||''}</span></td>
+        <td data-label="Pedido" class="num-cell">${row.pedido||''}</td>
+        <td data-label="N° Cliente" class="num-cell">${row.numero||''}</td>
+        <td data-label="Cliente"><strong>${row.cliente||''}</strong></td>
+        <td data-label="Fecha Confirm.">${fmtDate(row.fechaConfirm)}</td>
+        <td data-label="USD Solicitado" class="num-cell"><strong>${row.usd ? fmt(row.usd) : '—'}</strong></td>
+        <td data-label="Lead Time" class="num-cell">${row.leadTime ? `<span class="lead-badge">${row.leadTime}</span>` : '—'}</td>
+        <td data-label="Días" class="num-cell">${diasCell}</td>
+        <td data-label="Est. Planta">${fmtEstimado(row.estimadoPlanta)}</td>
+        <td data-label="Act. Planta">${fmtDate(row.actualizPlanta)}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  // ─── HELPERS ─────────────────────────────────────────────────────────────────
+  function fmt(v) {
+    if (v == null || v === '') return '—';
+    return '$' + Number(v).toLocaleString('es-AR', {minimumFractionDigits:0, maximumFractionDigits:0});
+  }
+  function fmtK(v) {
+    if (!v) return '—';
+    return '$' + Number(v).toLocaleString('es-AR', {minimumFractionDigits:0, maximumFractionDigits:0});
+  }
+  function pct(a, b) { return b ? (a/b*100).toFixed(1)+'%' : '0%'; }
+  function fmtEstimado(v) {
+    if (!v) return '—';
+    if (typeof v === 'string') {
+      const lower = v.trim().toLowerCase();
+      if (lower === 'finalizado' || lower.includes('finaliz')) {
+        return '<span class="badge-finalizado">✔ Finalizado</span>';
+      }
+      return v;
+    }
+    return fmtDate(v);
+  }
+
+  function fmtDate(d) {
+    if (!d) return '—';
+    if (typeof d === 'string' && d.includes('/')) return d; // already formatted from Sheets
+    try {
+      const dt = d instanceof Date ? d : new Date(d);
+      if (isNaN(dt)) return '—';
+      return dt.toLocaleDateString('es-AR', {day:'2-digit', month:'2-digit', year:'2-digit'});
+    } catch(e) { return '—'; }
+  }
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  const swBlob = new Blob([atob('CmNvbnN0IENBQ0hFID0gJ2d2MjAyNi12MSc7CmNvbnN0IEFTU0VUUyA9IFtzZWxmLmxvY2F0aW9uLmhyZWZdOwpzZWxmLmFkZEV2ZW50TGlzdGVuZXIoJ2luc3RhbGwnLCBlID0+IHsKICBlLndhaXRVbnRpbChjYWNoZXMub3BlbihDQUNIRSkudGhlbihjID0+IGMuYWRkQWxsKEFTU0VUUykpKTsKICBzZWxmLnNraXBXYWl0aW5nKCk7Cn0pOwpzZWxmLmFkZEV2ZW50TGlzdGVuZXIoJ2FjdGl2YXRlJywgZSA9PiB7CiAgZS53YWl0VW50aWwoY2FjaGVzLmtleXMoKS50aGVuKGtleXMgPT4KICAgIFByb21pc2UuYWxsKGtleXMuZmlsdGVyKGsgPT4gayAhPT0gQ0FDSEUpLm1hcChrID0+IGNhY2hlcy5kZWxldGUoaykpKQogICkpOwogIHNlbGYuY2xpZW50cy5jbGFpbSgpOwp9KTsKc2VsZi5hZGRFdmVudExpc3RlbmVyKCdmZXRjaCcsIGUgPT4gewogIGUucmVzcG9uZFdpdGgoY2FjaGVzLm1hdGNoKGUucmVxdWVzdCkudGhlbihyID0+IHIgfHwgZmV0Y2goZS5yZXF1ZXN0KSkpOwp9KTsK')], {type: 'text/javascript'});
+  const swUrl  = URL.createObjectURL(swBlob);
+  navigator.serviceWorker.register(swUrl).catch(() => {});
+}
+
+// ── Install prompt (Android Chrome) ──────────────────────────────────────────
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  const btn = document.getElementById('installBtn');
+  if (btn) btn.style.display = 'flex';
+});
+
+window.addEventListener('appinstalled', () => {
+  const btn = document.getElementById('installBtn');
+  if (btn) btn.style.display = 'none';
+  deferredPrompt = null;
+});
+
+function installApp() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
+  }
+}
+</script>
+</body>
+</html>
